@@ -2,7 +2,6 @@ defmodule RuntimeEnvs.ReleaseTasks do
   require Logger
 
   @start_apps []
-
   @app :runtime_envs
 
   def migrate_and_seed do
