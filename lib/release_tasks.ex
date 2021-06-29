@@ -6,6 +6,7 @@ defmodule RuntimeEnvs.ReleaseTasks do
   @app :runtime_envs
 
   def migrate_and_seed do
+    IO.inspect(Application.get_all_env(:runtime_envs), label: ":runtime_envs all env values BIS")
     Logger.info("|> MIGRATE_AND_SEED")
 
     start_services()
@@ -29,7 +30,6 @@ defmodule RuntimeEnvs.ReleaseTasks do
     run_seed()
     stop_services()
   end
-
 
   def run_migrate, do: Logger.info("|> run_migrate...")
 
