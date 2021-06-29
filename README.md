@@ -8,7 +8,7 @@ Small product for an issue on elixirforum.
 - run 
 
 ```bash
-MIX_ENV=prod mix release production && FOO="RUNTIME_FOO" _build/prod/rel/production/bin/production start
+make run
 ```
 
 ## Expected result
