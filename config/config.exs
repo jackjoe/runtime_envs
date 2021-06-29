@@ -8,7 +8,7 @@ use Mix.Config
 # General application configuration
 config :runtime_envs,
   env: Mix.env(),
-  foo: "COMPILE_TIME_FOO"
+  foo: System.get_env("FOO", "FOO_EMBED")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

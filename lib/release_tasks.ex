@@ -39,8 +39,9 @@ defmodule RuntimeEnvs.ReleaseTasks do
 
   defp start_services do
     Logger.info("|> Starting dependencies...")
+    Application.load(@app)
     # Start apps necessary for executing migrations
-    Enum.each(@start_apps, &Application.ensure_all_started/1)
+    # Enum.each(@start_apps, &Application.ensure_all_started/1)
     # Start the Repo(s) for app
     Logger.info("|> Starting repos...")
     # Switch pool_size to 2 for ecto > 3.0
@@ -55,6 +56,6 @@ defmodule RuntimeEnvs.ReleaseTasks do
   defp run_seeds_for(_), do: Logger.info("|> run_seeds_for...")
 
   defp repos do
-    Application.load(@app)
+    []
   end
 end
